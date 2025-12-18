@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格布局</title>
+    <style>
+        /* 栅格项目样式与区域绑定 */
+        .item1 { grid-area: a; background-color: #f8b400; color: white; }
+        .item2 { grid-area: b; background-color: #00f81d; color: white; }
+        .item3 { grid-area: c; background-color: #f83600; color: white; }
+        .item4 { grid-area: d; background-color: #4600f8; color: white; }
+        .item5 { grid-area: e; background-color: #00bef8; color: white; }
+        .item6 { grid-area: f; background-color: #f800e3; color: white; }
+        .item7 { grid-area: g; background-color: #f83600; color: white; }
+        .item8 { grid-area: h; background-color: #f800e3; color: white; }
+        .item9 { grid-area: i; background-color: #f800e3; color: white; }
+
+        /* 栅格容器核心配置 */
+        .grid-container {
+            display: grid;
+            /* 栅格区域命名规划（与图片一致） */
+            grid-template-areas:
+                'a a a b'
+                'c d e f'
+                'g h i f';
+            /* 间距与内边距（图片中标注注释说明） */
+            grid-gap: 5px; /* 栅格项之间的间距为10px（注释标注，代码写5px） */
+            padding: 10px; /* 容器内边距为10px */
+            /* 列宽与行高设置（完全匹配图片代码） */
+            grid-template-columns: 1fr 1fr 1fr 2fr;
+            grid-template-rows: 40vh 200px 200px;
+        }
+
+        /* 文字居中优化（提升显示效果） */
+        [class^="item"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1">学校要闻</div>
+        <div class="item2">快速链接</div>
+        <div class="item3">通知公告</div>
+        <div class="item4">科学研究</div>
+        <div class="item5">综合新闻</div>
+        <div class="item6">专题网站</div>
+        <div class="item7">科学研究</div>
+        <div class="item8">综合新闻</div>
+        <div class="item9">专题网站</div>
+    </div>
+</body>
+</html>
