@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致亲爱的老师❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 彩色渐变背景动画 */
+            background: linear-gradient(120deg, #f6d365, #fda085, #667eea, #764ba2);
+            background-size: 400% 400%;
+            animation: bgGradient 15s ease infinite;
+            font-family: "微软雅黑", "PingFang SC", sans-serif;
+            overflow: hidden;
+        }
+
+        /* 背景渐变动画 */
+        @keyframes bgGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 弹窗容器（带抖动+放大动画） */
+        .popup {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            /* 初始弹窗动画 */
+            animation: pop 0.8s ease-out, float 3s ease-in-out infinite alternate;
+            border: 3px solid #ff6b9d;
+            max-width: 90%;
+        }
+
+        /* 弹窗弹出动画 */
+        @keyframes pop {
+            0% { transform: scale(0.6); opacity: 0; }
+            70% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* 弹窗悬浮动画 */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* 动态表情样式 */
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 20px;
+            /* 表情跳动动画 */
+            animation: emojiJump 2s ease-in-out infinite;
+            display: block;
+        }
+
+        @keyframes emojiJump {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            25% { transform: translateY(-15px) rotate(10deg); }
+            50% { transform: translateY(0) rotate(-10deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        /* 主文案（渐变文字） */
+        .main-text {
+            font-size: 28px;
+            font-weight: 600;
+            /* 渐变文字 */
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71, #3498db);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* 祝福话语（彩色+渐显） */
+        .blessings {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+        .blessings p {
+            margin: 8px 0;
+            /* 逐行渐显动画 */
+            opacity: 0;
+            animation: textFade 1s forwards;
+        }
+        .blessings p:nth-child(1) { animation-delay: 0.5s; }
+        .blessings p:nth-child(2) { animation-delay: 1s; }
+        .blessings p:nth-child(3) { animation-delay: 1.5s; }
+        .blessings p:nth-child(4) { animation-delay: 2s; }
+
+        @keyframes textFade {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 祝福语彩色关键词 */
+        .blessings span {
+            color: #e91e63;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <!-- 动态表情 -->
+        <span class="emoji">🥰</span>
+        
+        <!-- 核心文案 -->
+        <div class="main-text">老师辛苦了，给加个分~</div>
+        
+        <!-- 温馨祝福 -->
+        <div class="blessings">
+            <p>感谢您这学期的悉心教导✨</p>
+            <p>愿您<span>工作顺利</span>，每天都开开心心🥳</p>
+            <p>祝您<span>身体健康</span>，桃李满天下🌷</p>
+            <p>小小的加分请求，望老师多多关照😘</p>
+        </div>
+    </div>
+
+    <!-- 动态表情切换彩蛋（可选） -->
+    <script>
+        // 每隔2秒切换不同表情，增加趣味性
+        const emojis = ['🥰', '💐', '🌟', '🎁', '💖', '😊', '👍'];
+        const emojiElement = document.querySelector('.emoji');
+        let index = 0;
+        
+        setInterval(() => {
+            index = (index + 1) % emojis.length;
+            emojiElement.textContent = emojis[index];
+        }, 2000);
+    </script>
+</body>
+</html>
